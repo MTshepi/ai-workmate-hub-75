@@ -47,7 +47,7 @@ export function emailPrompt(input: {
     context: `Sender: ${input.senderName || "the user"}.\nRecipient: ${input.recipient || "not specified"}.\nPurpose and key points provided by the sender:\n"""${input.purpose}"""`,
     task: `Write one complete, ready-to-send email in a ${input.tone} tone.`,
     requirements: [
-      TONE_GUIDES[input.tone] ?? TONE_GUIDES.Formal,
+      TONE_GUIDES[input.tone] ?? TONE_GUIDES["Formal"] ?? "",
       `Target length: ${input.length}.`,
       "Open with an appropriate greeting and close with a sign-off using the sender's name.",
       "Cover every key point from the purpose; keep paragraphs short and scannable.",
